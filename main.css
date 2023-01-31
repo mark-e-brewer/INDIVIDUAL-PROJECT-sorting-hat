@@ -1,3 +1,25 @@
-body {
-  background-color: #010052;
+body, html {
+ background-color: navy;
 }
+
+#main-div {
+  display: grid;
+  justify-items: center;
+  background-color: navy;
+  color: navy;
+}
+
+.card {
+  text-align: center;
+}
+
+#open-form {
+  border-radius: 6px;
+  background-color: navy;
+  color: white;
+  font-weight: bold;
+  border-color: #0909b0;
+}
+  #form-div {
+  display: none;
+ }
