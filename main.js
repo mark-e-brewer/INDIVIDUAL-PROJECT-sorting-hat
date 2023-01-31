@@ -3,23 +3,19 @@ let log = console.log;
 let refData = [
   {
     name: 'Harry Potter',
-    house: 'Gryffindor',
-    patronus: 'Stag'
+    house: 'Gryffindor'
   },
   {
     name: 'Servus Snape',
-    house: 'Slytherin',
-    patronus: 'silver doe'
+    house: 'Slytherin'
   },
   {
     name: 'Cedric Diggory',
-    house: 'Hufflepuff',
-    patronus: 'Tiger'
+    house: 'Hufflepuff'
   },
   {
     name: 'Luna Lovegood',
-    house: 'Ravenclaw',
-    patronus: 'Rabbit'
+    house: 'Ravenclaw'
   },
 ]
 
@@ -27,3 +23,17 @@ const renderToDom = (selector,html) => {
   const selected = document.querySelector(selector);
   selected.innerHTML = html;
 }
+
+const showFormBtn = document.querySelector('.getSorted')
+let form = document.querySelector('form');
+showFormBtn.addEventListener('click', () => {
+  if (form.style.display === 'none') {
+    form.style.display = 'block'
+  } else {
+    form.style.display = 'none'
+  }
+});
+
+// const startApp = () => {
+
+// }
