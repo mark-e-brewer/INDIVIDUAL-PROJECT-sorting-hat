@@ -2,25 +2,35 @@ let log = console.log;
 
 const refData = [
   {
+    id: 1,
     name: 'Harry Potter',
     house: 'Gryffindor',
     houseColor: 'red'
   },
   {
+    id: 2,
     name: 'Servus Snape',
     house: 'Slytherin',
     houseColor: 'green'
   },
   {
+    id: 3,
     name: 'Cedric Diggory',
     house: 'Hufflepuff',
     houseColor: 'yellow'
   },
   {
+    id: 4,
     name: 'Luna Lovegood',
     house: 'Ravenclaw',
     houseColor: 'blue'
   },
+]
+
+const volArmyArr = [
+  {
+    name: 'Voldemort'
+  }
 ]
 
 const renderToDom = (selector, htmlToRender) => {
@@ -59,7 +69,7 @@ let houseColorsObj = {
   'Slytherin': 'green',
   'Ravenclaw': 'blue'
 }
-
+const form = document.querySelector('form')
 const addStudent = (event) => {
   event.preventDefault();
   const name = document.querySelector('#name');
@@ -69,10 +79,12 @@ const addStudent = (event) => {
     const newStudent = {
       name: name.value,
       house: house,
-      houseColor: (houseColorsObj[house])
+      houseColor: (houseColorsObj[house]),
+      id: (refData.length +1)
     };
     refData.push(newStudent);
     studentCardsOnDom(refData);
+    form.reset();
 }
 
 const submitBtn = document.querySelector('#submit');

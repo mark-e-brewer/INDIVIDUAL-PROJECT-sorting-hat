@@ -33,4 +33,20 @@ border-radius: 6px;
 display: flex;
 justify-content: center;
 padding-top: 3px;
+margin-bottom: -7px;
+padding-bottom: -7px;
+}
+
+#all-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#vol-card{
+  padding-top: 10px;
+}
+
+#student-cards-div {
+  padding-top: 10px;
 }
