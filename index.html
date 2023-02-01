@@ -14,17 +14,30 @@
       <div class="card" style="width: 18rem;">
         <img src="https://i.pinimg.com/originals/f8/df/21/f8df21490b911ab243d0eb153b9d4f75.png" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Magical Sorting Hat</h5>
-          <p class="card-text">Step up and give me your name first year, i'll do the sorting.</p>
+          <h5 class="card-title">Magical Sorting Hat:</h5>
+          <p class="card-text">Step up and give me your name first year, i'll do the sorting...</p>
           <button id="open-form" class="getSorted">Get Sorted</button>
         </div>
       </div>
-       <div id="form-div">
+       <div class="formClass" id="form-div" style="display: none;">
         <form id='form'>
           <input type="text" id="name" placeholder="Name" required class="formInput" />
-          <button>Submit</button>
+          <button id="submit">Submit</button>
          </form>
        </div>
+    </div>
+    <div id="student-cards-div">
+      <div class="card" style="width: 18rem;" id="student-card-id">
+        <div class="card-header" style="background-color:red;">
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" id="list-name">Name</li>
+          <li class="list-group-item" id="list-house">House</li>
+          <li class="list-group-item" id="list-button">
+            <button class="expellButton">EXPELL</button>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 
