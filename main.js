@@ -1,6 +1,6 @@
 let log = console.log;
 
-let refData = [
+const refData = [
   {
     name: 'Harry Potter',
     house: 'Gryffindor',
@@ -34,14 +34,6 @@ showFormBtn.addEventListener('click', () => {
   formDiv.style.display = 'grid'
 });
 
-
-
-// formDiv.append(`<form id='form'>
-// <input type="text" id="name" placeholder="Name" required class="formInput" />
-// <button id="submit">Submit</button>
-// </form>`)
-
-
 const studentCardsOnDom = (arr) => {
   let domString = "";
 for (const student of refData) {
@@ -60,4 +52,45 @@ for (const student of refData) {
 renderToDom('#student-cards-div',domString)
 }
 
-studentCardsOnDom(refData);
+let houseArr = ['Gryffindor','Slytherin','Hufflepuff','Ravenclaw'];
+let houseColorsObj = {
+  'Gryffindor': 'red',
+  'Hufflepuff': 'yellow',
+  'Slytherin': 'green',
+  'Ravenclaw': 'blue'
+}
+
+const addStudent = (event) => {
+  event.preventDefault();
+  const name = document.querySelector('#name');
+  const houseRandomNum = Math.floor(Math.random() * 4);
+  const house = houseArr[houseRandomNum];
+
+    const newStudent = {
+      name: name.value,
+      house: house,
+      houseColor: (houseColorsObj[house])
+    };
+    refData.push(newStudent);
+    studentCardsOnDom(refData);
+}
+
+const submitBtn = document.querySelector('#submit');
+submitBtn.addEventListener('click', addStudent)
+
+const allBtn = document.querySelector('#all-btn');
+const gBtn = document.querySelector('#gr-btn');
+const hBtn = document.querySelector('#hu-btn');
+const rBtn = document.querySelector('#ra-btn');
+const sBTn = document.querySelector('#sl-btn');
+const vBtn = document.querySelector('#vo-btn')
+
+
+
+
+
+
+const startApp = () => {
+  studentCardsOnDom(refData)
+}
+startApp();

@@ -2,6 +2,10 @@ body, html {
  background-color: navy;
 }
 
+.sortBtn {
+border-radius: 6px;
+}
+
 #main-div {
   display: grid;
   justify-items: center;
