@@ -55,7 +55,7 @@ showFormBtn.addEventListener('click', () => {
 const studentCardsOnDom = (arr) => { //students
   let domString = "";
 for (const student of refData) {
-  domString +=   `<div class="card" style="width: 18rem;" id="student-card-id">
+  domString +=  `<div class="card" style="width: 18rem;" id="student-card-id">
   <div class="card-header" style="background-color:${student.houseColor};">
   </div>
   <ul class="list-group list-group-flush">
@@ -70,7 +70,7 @@ for (const student of refData) {
 renderToDom('#student-cards-div',domString)
 }
 
-const volArmyCards = (arr) => {
+const volArmyCards = (arr) => { // voldimort army
   let domString = '';
 for (const mem of volArmyArr) {
   domString += `<div class="card" style="width: 18rem;">
@@ -92,12 +92,12 @@ const addStudent = (event) => {
 
     const newStudent = {
       name: name.value,
-      house: house,
-      houseColor: (houseColorsObj[house]),
-      id: (refData.length +1)
-    };
-    refData.push(newStudent);
-    studentCardsOnDom(refData);
+      house: house,      
+      houseColor: (houseColorsObj[house]),      
+      id: (refData.length +1)      
+    };      
+    refData.push(newStudent);      
+    studentCardsOnDom(refData);      
     form.reset();
 }
 
@@ -108,13 +108,44 @@ const allBtn = document.querySelector('#all-btn');
 const gBtn = document.querySelector('#gr-btn');
 const hBtn = document.querySelector('#hu-btn');
 const rBtn = document.querySelector('#ra-btn');
-const sBTn = document.querySelector('#sl-btn');
+const sBtn = document.querySelector('#sl-btn');
 const vBtn = document.querySelector('#vo-btn')
 
+const filterStudents = (arr, houseStr) => {
+  const typeArr = [];
+for (let el of arr) {
+  if (el.house === houseStr) {
+    typeArr.push(el)
+  }
+}
+return typeArr
+}
 
+allBtn.addEventListener("click", () => {
+  studentCardsOnDom(refData);
+  volArmyCards(volArmyArr);
+})
 
+gBtn.addEventListener("click", () => {
+  const filter = filterStudents(refData,"Gryffindor")
+  studentCardsOnDom(filter)
+  volArmyCards(filter)
+})
 
+hBtn.addEventListener("click", () => {
+  const filter = filterStudents(refData,"Hufflepuff")
+  studentCardsOnDom(filter)
+})
 
+rBtn.addEventListener("click", () => {
+  const filter = filterStudents(refData,"Ravenclaw")
+  studentCardsOnDom(filter)
+})
+
+sBtn.addEventListener("click", () => {
+  const filter = filterStudents(refData,"Slytherin")
+  studentCardsOnDom(filter)
+})
 
 const app = document.querySelector('#all-cards')
 
@@ -143,5 +174,3 @@ const startApp = () => {
   armyCount(volArmyArr);
 }
 startApp();
-
-// log(volArmyArr[volArmyArr.length-1][0].name);
