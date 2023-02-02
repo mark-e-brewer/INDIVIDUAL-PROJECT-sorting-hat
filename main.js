@@ -33,6 +33,14 @@ const volArmyArr = [
   }
 ]
 
+let houseArr = ['Gryffindor','Slytherin','Hufflepuff','Ravenclaw'];
+let houseColorsObj = {
+  'Gryffindor': 'red',
+  'Hufflepuff': 'yellow',
+  'Slytherin': 'green',
+  'Ravenclaw': 'blue'
+}
+
 const renderToDom = (selector, htmlToRender) => {
   const selectedDiv = document.querySelector(selector);
   selectedDiv.innerHTML = htmlToRender
@@ -44,7 +52,7 @@ showFormBtn.addEventListener('click', () => {
   formDiv.style.display = 'grid'
 });
 
-const studentCardsOnDom = (arr) => {
+const studentCardsOnDom = (arr) => { //students
   let domString = "";
 for (const student of refData) {
   domString +=   `<div class="card" style="width: 18rem;" id="student-card-id">
@@ -54,7 +62,7 @@ for (const student of refData) {
     <li class="list-group-item" id="list-name">${student.name}</li>
     <li class="list-group-item" id="list-house">${student.house}</li>
     <li class="list-group-item" id="list-button">
-      <button class="expellButton">EXPELL</button>
+      <button class='exBtn' id='expell--${student.id}'>EXPELL</button>
     </li>
   </ul>
 </div>`;
@@ -62,13 +70,19 @@ for (const student of refData) {
 renderToDom('#student-cards-div',domString)
 }
 
-let houseArr = ['Gryffindor','Slytherin','Hufflepuff','Ravenclaw'];
-let houseColorsObj = {
-  'Gryffindor': 'red',
-  'Hufflepuff': 'yellow',
-  'Slytherin': 'green',
-  'Ravenclaw': 'blue'
+const volArmyCards = (arr) => {
+  let domString = '';
+for (const mem of volArmyArr) {
+  domString += `<div class="card" style="width: 18rem;">
+  <img src="https://images.ctfassets.net/usf1vwtuqyxm/5b2GMaJkpa2mWk2ewgIS8/283a62a392c740a31bfe4b823afb52b3/DeathEaters_WB_F5_DeathEaterInRobes_Illust_080615_Port.jpg" class="card-img-top" alt="..." id="army-pic">
+  <div class="card-body">
+    <p class="card-text">${mem.name}</p>
+  </div>
+</div>`
 }
+renderToDom('#army-member-div',domString)
+}
+
 const form = document.querySelector('form')
 const addStudent = (event) => {
   event.preventDefault();
@@ -102,7 +116,32 @@ const vBtn = document.querySelector('#vo-btn')
 
 
 
+const app = document.querySelector('#all-cards')
+
+app.addEventListener('click', (event) => {
+  if (event.target.id.includes("expell")){
+    const [throwAway,studentId] = event.target.id.split('--');
+    const indexOfStudent = refData.findIndex(obj => obj.id === Number(studentId));
+    const expelledStudentArr = refData.slice(indexOfStudent,(indexOfStudent+1));
+    const expelledStudent = expelledStudentArr[0]
+    volArmyArr.push(expelledStudent);
+    refData.splice(indexOfStudent, 1)
+  }
+  studentCardsOnDom(refData);
+  volArmyCards(volArmyArr);
+  armyCount(volArmyArr);
+});
+
+let countHtml = document.querySelector('#vol-army-count')
+const armyCount = (arr) => {
+  countHtml.innerHTML = `Voldimort's Army now has ${arr.length} Member(s)`
+}
+
 const startApp = () => {
-  studentCardsOnDom(refData)
+  studentCardsOnDom(refData);
+  volArmyCards(volArmyArr);
+  armyCount(volArmyArr);
 }
 startApp();
+
+// log(volArmyArr[volArmyArr.length-1][0].name);
