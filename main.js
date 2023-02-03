@@ -56,18 +56,18 @@ const studentCardsOnDom = (arr) => { //students
   let domString = "";
 for (const student of refData) {
   domString +=  `<div class="card" style="width: 18rem;" id="student-card-id">
-  <div class="card-header" style="background-color:${student.houseColor};">
+  <div class="card-header" style="background-color:${student['houseColor']};">
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item" id="list-name">${student.name}</li>
-    <li class="list-group-item" id="list-house">${student.house}</li>
+    <li class="list-group-item" id="list-name">${student['name']}</li>
+    <li class="list-group-item" id="list-house">${student['house']}</li>
     <li class="list-group-item" id="list-button">
       <button class='exBtn' id='expell--${student.id}'>EXPELL</button>
     </li>
   </ul>
 </div>`;
 }
-renderToDom('#student-cards-div',domString)
+renderToDom("#student-cards-div",domString)
 }
 
 const volArmyCards = (arr) => { // voldimort army
@@ -80,7 +80,7 @@ for (const mem of volArmyArr) {
   </div>
 </div>`
 }
-renderToDom('#army-member-div',domString)
+renderToDom("#army-member-div",domString)
 }
 
 const form = document.querySelector('form')
@@ -109,42 +109,101 @@ const gBtn = document.querySelector('#gr-btn');
 const hBtn = document.querySelector('#hu-btn');
 const rBtn = document.querySelector('#ra-btn');
 const sBtn = document.querySelector('#sl-btn');
-const vBtn = document.querySelector('#vo-btn')
 
-const filterStudents = (arr, houseStr) => {
-  const typeArr = [];
-for (let el of arr) {
-  if (el.house === houseStr) {
-    typeArr.push(el)
-  }
-}
-return typeArr
+const filterFunct = (arr, houseStr) => {
+const filterArr = [];
+  arr.forEach(el => {
+    if (el.house === houseStr ) {
+      filterArr.push(el)
+   }
+  })
+return filterArr
 }
 
 allBtn.addEventListener("click", () => {
   studentCardsOnDom(refData);
   volArmyCards(volArmyArr);
+  armyCount(volArmyArr);
 })
 
 gBtn.addEventListener("click", () => {
-  const filter = filterStudents(refData,"Gryffindor")
+  const filter = filterFunct(refData,'Gryffindor')
   studentCardsOnDom(filter)
-  volArmyCards(filter)
+  let domString = ''
+for (let el of filter) {
+  domString += `<div class="card" style="width: 18rem;" id="student-card-id">
+  <div class="card-header" style="background-color:${el['houseColor']};">
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item" id="list-name">${el['name']}</li>
+    <li class="list-group-item" id="list-house">${el['house']}</li>
+    <li class="list-group-item" id="list-button">
+      <button class='exBtn' id='expell--${el.id}'>EXPELL</button>
+    </li>
+  </ul>
+</div>`
+}
+renderToDom('#student-cards-div',domString )
 })
 
 hBtn.addEventListener("click", () => {
-  const filter = filterStudents(refData,"Hufflepuff")
+  const filter = filterFunct(refData,"Hufflepuff")
   studentCardsOnDom(filter)
+  let domString = ''
+  for (let el of filter) {
+    domString += `<div class="card" style="width: 18rem;" id="student-card-id">
+    <div class="card-header" style="background-color:${el['houseColor']};">
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item" id="list-name">${el['name']}</li>
+      <li class="list-group-item" id="list-house">${el['house']}</li>
+      <li class="list-group-item" id="list-button">
+        <button class='exBtn' id='expell--${el.id}'>EXPELL</button>
+      </li>
+    </ul>
+  </div>`
+  }
+  renderToDom('#student-cards-div',domString )
 })
 
 rBtn.addEventListener("click", () => {
-  const filter = filterStudents(refData,"Ravenclaw")
+  const filter = filterFunct(refData,"Ravenclaw")
   studentCardsOnDom(filter)
+  let domString = ''
+  for (let el of filter) {
+    domString += `<div class="card" style="width: 18rem;" id="student-card-id">
+    <div class="card-header" style="background-color:${el['houseColor']};">
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item" id="list-name">${el['name']}</li>
+      <li class="list-group-item" id="list-house">${el['house']}</li>
+      <li class="list-group-item" id="list-button">
+        <button class='exBtn' id='expell--${el.id}'>EXPELL</button>
+      </li>
+    </ul>
+  </div>`
+  }
+  renderToDom('#student-cards-div',domString )
 })
 
 sBtn.addEventListener("click", () => {
-  const filter = filterStudents(refData,"Slytherin")
+  const filter = filterFunct(refData,"Slytherin")
   studentCardsOnDom(filter)
+  let domString = ''
+  for (let el of filter) {
+    domString += `<div class="card" style="width: 18rem;" id="student-card-id">
+    <div class="card-header" style="background-color:${el['houseColor']};">
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item" id="list-name">${el['name']}</li>
+      <li class="list-group-item" id="list-house">${el['house']}</li>
+      <li class="list-group-item" id="list-button">
+        <button class='exBtn' id='expell--${el.id}'>EXPELL</button>
+      </li>
+    </ul>
+  </div>`
+  }
+  renderToDom('#student-cards-div',domString )
 })
 
 const app = document.querySelector('#all-cards')
