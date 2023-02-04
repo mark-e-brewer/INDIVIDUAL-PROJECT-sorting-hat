@@ -55,7 +55,7 @@ showFormBtn.addEventListener('click', () => {
 const studentCardsOnDom = (arr) => { //students
   let domString = "";
 for (const student of refData) {
-  domString +=  `<div class="card" style="width: 18rem;" id="student-card-id">
+  domString +=  `<div class="card" style="width: 15rem;" id="student-card-id">
   <div class="card-header" style="background-color:${student['houseColor']};" id='color-bar'>
   </div>
   <ul class="list-group list-group-flush" id='ul-student'>
@@ -73,7 +73,7 @@ renderToDom("#student-cards-div",domString)
 const volArmyCards = (arr) => { // voldimort army
   let domString = '';
 for (const mem of volArmyArr) {
-  domString += `<div class="card" style="width: 18rem;" id='vol-card-id'>
+  domString += `<div class="card" style="width: 15rem;" id='vol-card-id'>
   <img src="https://images.ctfassets.net/usf1vwtuqyxm/5b2GMaJkpa2mWk2ewgIS8/283a62a392c740a31bfe4b823afb52b3/DeathEaters_WB_F5_DeathEaterInRobes_Illust_080615_Port.jpg" class="card-img-top" alt="..." id="army-pic">
   <div class="card-body">
     <p class="card-text" id='vol-card-body'>${mem.name}</p>
