@@ -5,25 +5,25 @@ const refData = [
     id: 1,
     name: 'Harry Potter',
     house: 'Gryffindor',
-    houseColor: 'red'
+    houseColor: '#740001'
   },
   {
     id: 2,
     name: 'Servus Snape',
     house: 'Slytherin',
-    houseColor: 'green'
+    houseColor: '#1a472a'
   },
   {
     id: 3,
     name: 'Cedric Diggory',
     house: 'Hufflepuff',
-    houseColor: 'yellow'
+    houseColor: '#ecb939'
   },
   {
     id: 4,
     name: 'Luna Lovegood',
     house: 'Ravenclaw',
-    houseColor: 'blue'
+    houseColor: '#222f5b'
   },
 ]
 
@@ -35,10 +35,10 @@ const volArmyArr = [
 
 let houseArr = ['Gryffindor','Slytherin','Hufflepuff','Ravenclaw'];
 let houseColorsObj = {
-  'Gryffindor': 'red',
-  'Hufflepuff': 'yellow',
-  'Slytherin': 'green',
-  'Ravenclaw': 'blue'
+  'Gryffindor': '#740001',
+  'Hufflepuff': '#ecb939',
+  'Slytherin': '#1a472a',
+  'Ravenclaw': '#222f5b'
 }
 
 const renderToDom = (selector, htmlToRender) => {
@@ -56,7 +56,7 @@ const studentCardsOnDom = (arr) => { //students
   let domString = "";
 for (const student of refData) {
   domString +=  `<div class="card" style="width: 18rem;" id="student-card-id">
-  <div class="card-header" style="background-color:${student['houseColor']};">
+  <div class="card-header" style="background-color:${student['houseColor']};" id='color-bar'>
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item" id="list-name">${student['name']}</li>
@@ -73,7 +73,7 @@ renderToDom("#student-cards-div",domString)
 const volArmyCards = (arr) => { // voldimort army
   let domString = '';
 for (const mem of volArmyArr) {
-  domString += `<div class="card" style="width: 18rem;">
+  domString += `<div class="card" style="width: 18rem;" id='vol-card-id'>
   <img src="https://images.ctfassets.net/usf1vwtuqyxm/5b2GMaJkpa2mWk2ewgIS8/283a62a392c740a31bfe4b823afb52b3/DeathEaters_WB_F5_DeathEaterInRobes_Illust_080615_Port.jpg" class="card-img-top" alt="..." id="army-pic">
   <div class="card-body">
     <p class="card-text">${mem.name}</p>

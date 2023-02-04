@@ -1,20 +1,67 @@
 body, html {
- background-color: navy;
-}
-
-.sortBtn {
-border-radius: 6px;
+  background: rgb(1,13,87);
+  background: linear-gradient(90deg, rgba(1,13,87,1) 0%, rgba(3,34,138,1) 41%, rgba(26,71,240,1) 58%, rgba(84,155,240,1) 100%);
 }
 
 #main-div {
   display: grid;
   justify-items: center;
-  background-color: navy;
+  background: rgb(1,13,87);
+  background: linear-gradient(90deg, rgba(1,13,87,1) 0%, rgba(3,34,138,1) 41%, rgba(26,71,240,1) 58%, rgba(84,155,240,1) 100%);
   color: navy;
+  padding-bottom: 69px;
+}
+
+.sortBtn {
+border-radius: 6px;
+font-weight: bold;
+margin-bottom: 10px;
+margin-top: 5px;
+font-family: 'Cinzel', serif;
+}
+
+#all-btn {
+  background-color: #737373;
+border: outset #8a8a8a 2px;
+color: white;
+}
+
+#gr-btn {
+  background-color: #740001;
+  color: white;
+  border: outset #940900 2px;
+}
+
+#hu-btn {
+  background-color: #ecb939;
+  color: white;
+  border: outset #dec109 2px;
+}
+
+#ra-btn {
+  background-color: #222f5b;
+  color:white;
+  border: outset #051cb5 2px;
+}
+
+#sl-btn {
+  background-color: #1a472a;
+  color: white;
+  border: outset #007302 2px;
+}
+
+#submit {
+border-radius: 6px;
+background-color: #737373;
+border: outset #8a8a8a 3px;
+color: white;
+font-family: 'Cinzel', serif;
 }
 
 .card {
   text-align: center;
+  font-family: 'Cinzel Decorative', cursive;
+  font-weight: 900;
 }
 
 .card-title {
@@ -26,7 +73,8 @@ border-radius: 6px;
   background-color: navy;
   color: white;
   font-weight: bold;
-  border-color: #0909b0;
+  border: outset #0b00a3 3px;
+  font-family: 'Cinzel', serif;
 }
 
 #form-div {
@@ -35,6 +83,7 @@ justify-content: center;
 padding-top: 3px;
 margin-bottom: -7px;
 padding-bottom: -7px;
+
 }
 
 #all-cards {
@@ -51,6 +100,31 @@ padding-bottom: -7px;
   padding-top: 10px;
 }
 
+#student-card-id {
+  border:solid white 3px;
+}
+
+#color-bar {
+  height: 33px;
+}
+
 #army-pic {
   height: 240px;
+}
+
+.exBtn {
+border-radius: 6px;
+background-color: #a10000;
+color: white;
+font-weight: bold;
+border:outset #bd0b0b 3px;
+font-family: 'Cinzel', serif;
+}
+
+#vol-card-id {
+  border:solid white 3px ;
+}
+
+#vol-count-id {
+  border:solid white 3px ;
 }
