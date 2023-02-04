@@ -131,8 +131,8 @@ gBtn.addEventListener("click", () => {
   studentCardsOnDom(filter)
   let domString = ''
 for (let el of filter) {
-  domString += `<div class="card" style="width: 18rem;" id="student-card-id">
-  <div class="card-header" style="background-color:${el['houseColor']};">
+  domString += `<div class="card" style="width: 15rem;" id="student-card-id">
+  <div class="card-header" style="background-color:${el['houseColor']};" id='color-bar'>
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item" id="list-name">${el['name']}</li>
@@ -151,8 +151,8 @@ hBtn.addEventListener("click", () => {
   studentCardsOnDom(filter)
   let domString = ''
   for (let el of filter) {
-    domString += `<div class="card" style="width: 18rem;" id="student-card-id">
-    <div class="card-header" style="background-color:${el['houseColor']};">
+    domString += `<div class="card" style="width: 15rem;" id="student-card-id">
+    <div class="card-header" style="background-color:${el['houseColor']};" id='color-bar'>
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item" id="list-name">${el['name']}</li>
@@ -171,8 +171,8 @@ rBtn.addEventListener("click", () => {
   studentCardsOnDom(filter)
   let domString = ''
   for (let el of filter) {
-    domString += `<div class="card" style="width: 18rem;" id="student-card-id">
-    <div class="card-header" style="background-color:${el['houseColor']};">
+    domString += `<div class="card" style="width: 15rem;" id="student-card-id">
+    <div class="card-header" style="background-color:${el['houseColor']};" id='color-bar'>
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item" id="list-name">${el['name']}</li>
@@ -191,8 +191,8 @@ sBtn.addEventListener("click", () => {
   studentCardsOnDom(filter)
   let domString = ''
   for (let el of filter) {
-    domString += `<div class="card" style="width: 18rem;" id="student-card-id">
-    <div class="card-header" style="background-color:${el['houseColor']};">
+    domString += `<div class="card" style="width: 15rem;" id="student-card-id">
+    <div class="card-header" style="background-color:${el['houseColor']};" id='color-bar'>
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item" id="list-name">${el['name']}</li>
