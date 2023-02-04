@@ -100,13 +100,32 @@ padding-bottom: -7px;
   padding-top: 10px;
 }
 
-#student-card-id {
-  border:solid white 3px;
-}
-
 #color-bar {
   height: 33px;
 }
+
+#list-button {
+  border:black;
+  padding-bottom: 1px;
+}
+
+.list-group-item {
+  background-color: white;
+}
+
+#list-name {
+padding: 5px;
+}
+
+#list-house {
+  padding: 5px;
+}
+
+#list-button {
+  padding: 3px;
+  padding-top: 6px;
+}
+
 
 #army-pic {
   height: 240px;
@@ -121,10 +140,30 @@ border:outset #bd0b0b 3px;
 font-family: 'Cinzel', serif;
 }
 
+#student-card-id {
+  border:solid white 3px;
+  margin: 4px;
+}
+
 #vol-card-id {
-  border:solid white 3px ;
+  border:solid white 3px;
+  color: black;
+  margin: 4px;
 }
 
 #vol-count-id {
-  border:solid white 3px ;
+  border:solid white 3px;
+  color: black;
+  margin: 4px 4px 4px 4px;
+}
+
+#count-card-body {
+  padding: 5px;
+  margin-bottom: -5px;
+}
+
+#vol-card-body {
+  padding: 0px;
+  margin: -7px;
+  margin-bottom: -13px;
 }
