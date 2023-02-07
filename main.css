@@ -19,6 +19,27 @@ font-weight: bold;
 margin-bottom: 10px;
 margin-top: 5px;
 font-family: 'Cinzel', serif;
+transition: background-color .2s ease-in-out;
+}
+
+#all-btn:hover {
+  background-color:#8f8f8f;
+}
+
+#gr-btn:hover {
+  background-color: #8f090a;
+}
+
+#hu-btn:hover {
+  background-color: #f7ca59;
+}
+
+#ra-btn:hover {
+  background-color: #2e3e78;
+}
+
+#sl-btn:hover {
+  background-color: #235c36;
 }
 
 #all-btn {
@@ -36,19 +57,19 @@ color: white;
 #hu-btn {
   background-color: #ecb939;
   color: white;
-  border: outset #dec109 2px;
+  border: outset #f0cb6c 2px;
 }
 
 #ra-btn {
   background-color: #222f5b;
   color:white;
-  border: outset #051cb5 2px;
+  border: outset #324794 2px;
 }
 
 #sl-btn {
   background-color: #1a472a;
   color: white;
-  border: outset #007302 2px;
+  border: outset #2f7045 2px;
 }
 
 #submit {
@@ -57,6 +78,11 @@ background-color: #737373;
 border: outset #8a8a8a 3px;
 color: white;
 font-family: 'Cinzel', serif;
+transition: background-color .2s ease-in-out;
+}
+
+#submit:hover {
+  background-color:  #8f8f8f;
 }
 
 .card {
@@ -74,8 +100,13 @@ font-family: 'Cinzel', serif;
   background-color: navy;
   color: white;
   font-weight: bold;
-  border: outset #0b00a3 3px;
+  border: outset #30309c 3px;
   font-family: 'Cinzel', serif;
+  transition: background-color .2s ease-in-out;
+}
+
+#open-form:hover {
+  background-color:#2a2a96;
 }
 
 #form-div {
@@ -104,6 +135,7 @@ padding-bottom: -7px;
 #color-bar {
   height: 31px;
 }
+
 
 #list-button {
   border:black;
@@ -134,16 +166,23 @@ padding: 5px;
 
 .exBtn {
 border-radius: 6px;
-background-color: #a10000;
+background: linear-gradient(to bottom right, #e50000, #5e0600);
+border: none;
 color: white;
 font-weight: bold;
-border:outset #bd0b0b 3px;
 font-family: 'Cinzel', serif;
+transition: box-shadow .2s ease-in-out;
+margin: 2px;
 }
+
+.exBtn:hover {
+  box-shadow: 0 0 .25rem rgba(142, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(169, 0, 0, 0.5), .125rem .125rem 1rem rgba(82, 0, 0, 0.5);
+}
+
 
 #student-card-id {
   border:solid white 3px;
-  margin: 4px;
+  margin-bottom: 4px;
 }
 
 #vol-card-id {

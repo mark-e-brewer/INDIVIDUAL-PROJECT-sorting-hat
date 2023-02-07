@@ -46,6 +46,20 @@ const renderToDom = (selector, htmlToRender) => {
   selectedDiv.innerHTML = htmlToRender
 };
 
+let i = 0;
+let hatTxt = "Step up and give me your name first year, i'll do the sorting...";
+let speed = 50;
+
+const hatTypeTxt = () => {
+  if (i < hatTxt.length) {
+    document.querySelector('#hat-speech').innerHTML += hatTxt.charAt(i);
+    i++;
+    setTimeout(hatTypeTxt,speed);
+  }
+}
+
+addEventListener("load", hatTypeTxt)
+
 const showFormBtn = document.querySelector('.getSorted')
 showFormBtn.addEventListener('click', () => {
   const formDiv = document.querySelector('#form-div');
