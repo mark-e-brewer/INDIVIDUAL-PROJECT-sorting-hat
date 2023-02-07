@@ -23,7 +23,7 @@ transition: background-color .2s ease-in-out;
 }
 
 #all-btn:hover {
-  background-color:#8f8f8f;
+  background-color:#828282;
 }
 
 #gr-btn:hover {
@@ -82,7 +82,7 @@ transition: background-color .2s ease-in-out;
 }
 
 #submit:hover {
-  background-color:  #8f8f8f;
+  background-color:  #828282;
 }
 
 .card {
@@ -97,16 +97,16 @@ transition: background-color .2s ease-in-out;
 
 #open-form {
   border-radius: 6px;
-  background-color: navy;
+  background-color: #737373;
   color: white;
   font-weight: bold;
-  border: outset #30309c 3px;
+  border: outset #8a8a8a 2px;
   font-family: 'Cinzel', serif;
   transition: background-color .2s ease-in-out;
 }
 
 #open-form:hover {
-  background-color:#2a2a96;
+  background-color:#828282;
 }
 
 #form-div {
@@ -177,6 +177,10 @@ margin: 2px;
 
 .exBtn:hover {
   box-shadow: 0 0 .25rem rgba(142, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(169, 0, 0, 0.5), .125rem .125rem 1rem rgba(82, 0, 0, 0.5);
+}
+
+#hat-card {
+  color: black;
 }
 
 
